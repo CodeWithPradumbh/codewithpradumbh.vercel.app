@@ -4,26 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code With Pradumbh</title>
+    <title> Code with Pradumbh</title>
     <style>
         /* General Styles */
         body {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
-            margin: 5px;
-            padding: 25px;
-            background-color: #f16d15;
+            margin: 0;
+            size-adjust: 50px;
+            padding: 0;
             color: #b3aaaa;
-            background-image: url(pradumbh_hero.jpg);
         }
 
         header {
-            background-color: #534b46;
-            color: #fff;
+            background-color: rgba(202, 82, 7, 0.9);
+            color: #17b9ce;
             padding: 1rem;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        <p>Hello! I'm Pradumbh Kourav, a passionate Web Developer with a knack for creating beautiful and functional websites. I love solving complex problems with elegant solutions and strive to stay up-to-date with the latest web technologies.</p>
-        <p>My expertise includes front-end frameworks, back-end development, and a touch of design. Let's work together to bring your ideas to life!</p>
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -33,47 +34,59 @@
         nav ul li {
             display: inline;
             margin: 0 1rem;
+        
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        form {
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        .hero {
+            height: 100vh;
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        form label {
-            margin-top: 1rem;
-            text-align: left;
-        }
-
-        form input,
-        form textarea {
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        footer {
-            background-color: #333;
-            color: #d6aeae;
             text-align: center;
-            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
         }
 
-        /* Running Animation Styles */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Send video to back */
+        }
+
         .runner {
             width: 150px;
             height: 50px;
-            background-color: #3498db;
+            background-color: rgba(52, 152, 219, 0.8);
             border-radius: 10%;
-            position: relative;
+            position: absolute;
+            bottom: 20px;
             animation: run 6s linear infinite;
-            margin: 2rem auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -84,15 +97,138 @@
 
         @keyframes run {
             0% {
-                left: 0;
+                left: -150px;
             }
 
             50% {
-                left: 300px;
+                left: calc(100% + 150px);
             }
 
             100% {
-                left: 0;
+                left: -150px;
+            }
+        }
+
+        .about,
+        .projects,
+        .contact {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 60px 20px;
+            margin: 2rem 0;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-content,
+        .project-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image img:hover {
+            transform: scale(1.05);
+        }
+
+        .text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .text h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .text h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #007bff;
+            display: block;
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        .text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            font-size: 1rem;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            transition: background 0.1s ease-in-out, transform 0.1s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #d6aeae;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content,
+            .project-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image,
+            .text {
+                flex: none;
+                width: 100%;
             }
         }
     </style>
@@ -101,31 +237,89 @@
 <body>
     <header>
         <h1>Code with Pradumbh</h1>
+        <style>colgroup</style>
         <nav>
             <ul>
-                <li><a target="_blank" href="https://www.instagram.com/mr.pradumbh.kourav/">Instagram</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a target="_blank" title="This is my Youtube Account"
-                        href="https://youtube.com/@hindu.traveller1?feature=shared">Youtube</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/mr.pradumbh.kourav/">Instagram</a></li>
+                <li><a target="_blank" href="https://youtube.com/@hindu.traveller1?feature=shared">YouTube</a></li>
             </ul>
         </nav>
     </header>
 
-    <div style="min-height: 90vh;">
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <video class="video-background" autoplay muted loop>
+            <source src="mobile tower.mp4" type="video/mp4"> <!-- Replace with your video file -->
+            Your browser does not support the video tag.
+        </video>
+        <h2 style="font-size: 80px; color: rgb(233, 136, 9); ">Welcome to my Website</h2>
+        <p>Your one-stop destination for web development.</p>
+        <div class="runner">Running Animation</div>
+    </section>
 
-        <!-- Running Animation Section -->
-        <div class="runner">Pradumbh</div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="image">
+                    <img src="Pradumbh Bio.jpg" alt="Profile Photo"> <!-- Replace with your own photo -->
+                </div>
+                <div class="text">
+                    <h2 style="color: red;">About Me</h2>
+                    <p>Hello, I'm Pradumbh Kourav, a dedicated web developer with a passion for crafting dynamic and user-friendly websites. I specialize in creating responsive, intuitive, and visually appealing web experiences.</p>
+                    <p>I pride myself on turning complex problems into simple, beautiful, and efficient code. If you're looking for a developer who can bring creativity, precision, and reliability to your next project, let's connect!</p>
+                    <a href="#contact" class="btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-content">
+                <div class="image">
+                    <img src="frontend.webp" alt="frontend"> <!-- Replace with project image -->
+                    <p>Project 1 Description</p>
+                </div>
+                <div class="image">
+                    <img src="web-dev.webp" alt="Project 2"> <!-- Replace with project image -->
+                    <p>Project 2 Description</p>
+                </div>
+                <div class="image">
+                    <img src="react-native.webp" alt="Project 3"> <!-- Replace with project image -->
+                    <p>Project 3 Description</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    
+    <section class="contact" id="contact">
+        <div class="contact-info">
 
-    </div>
-
+            <h2 style="color:red;">Contact Information</h2>
+            <p>Email: Pradumbh.kourav.tec@gmail.com</p>
+            <p>Phone: +91-9171611702</p>
+            <p>Address: Scheme Number 78, Part II, Scheme 78, Vijay Nagar, Indore, Madhya Pradesh 452010</p>
+            <form>
+                <h4>Send Me a Message</h4>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Code with Pradumbh. All rights reserved.</p>
+        <p>&copy; 2024 Code With Pradumbh. All rights reserved.</p>
     </footer>
 </body>
 
