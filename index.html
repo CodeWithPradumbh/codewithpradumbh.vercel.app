@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Code with Pradumbh</title>
+    <title>Code with Pradumbh</title>
     <style>
         /* General Styles */
         body {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
             margin: 0;
-            size-adjust: 50px;
             padding: 0;
             color: #b3aaaa;
         }
 
+        /* Header Styles with Background Image */
         header {
-            background-color: rgba(202, 82, 7, 0.9);
+            background: url('path/to/your/image.jpg') no-repeat center center; /* Replace with your image path */
+            background-size: cover;
             color: #17b9ce;
             padding: 1rem;
             text-align: center;
@@ -34,7 +35,6 @@
         nav ul li {
             display: inline;
             margin: 0 1rem;
-        
         }
 
         nav ul li a {
@@ -63,7 +63,6 @@
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -76,7 +75,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Send video to back */
+            z-index: -1;
         }
 
         .runner {
@@ -99,11 +98,9 @@
             0% {
                 left: -150px;
             }
-
             50% {
                 left: calc(100% + 150px);
             }
-
             100% {
                 left: -150px;
             }
@@ -124,7 +121,6 @@
                 transform: translateY(20px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -237,7 +233,6 @@
 <body>
     <header>
         <h1>Code with Pradumbh</h1>
-        <style>colgroup</style>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -246,7 +241,7 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a target="_blank" href="https://www.instagram.com/mr.pradumbh.kourav/">Instagram</a></li>
                 <li><a target="_blank" href="https://youtube.com/@hindu.traveller1?feature=shared">YouTube</a></li>
-                <li><a target="_blank" href="https://forms.gle/Qb3piW2RdP6FRAg4A">Fast Contect</a></li>
+                <li><a target="_blank" href="https://forms.gle/Qb3piW2RdP6FRAg4A">Fast Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -257,7 +252,7 @@
             <source src="NEW Ground.mp4" type="video/mp4"> <!-- Replace with your video file -->
             Your browser does not support the video tag.
         </video>
-        <h2 style="font-size: 80px; color: rgb(233, 136, 9); ">Welcome to my Website</h2>
+        <h2 style="font-size: 80px; color: rgb(233, 136, 9);">Welcome to my Website</h2>
         <p>Your one-stop destination for web development.</p>
         <div class="runner">Running Animation</div>
     </section>
@@ -301,10 +296,8 @@
     </section>
 
     <!-- Contact Section -->
-    
     <section class="contact" id="contact">
         <div class="contact-info">
-
             <h2 style="color:red;">Contact Information</h2>
             <p>Email: Pradumbh.kourav.tec@gmail.com</p>
             <p>Phone: +91-9171611702</p>
