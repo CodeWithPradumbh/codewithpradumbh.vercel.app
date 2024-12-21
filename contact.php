@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                <a href="contact.php" class="nav-item nav-link active">Contact</a>
             </div>
         </div>
     </nav>
